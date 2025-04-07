@@ -6,7 +6,7 @@ It is a multi-user app (requires one admin and other service professionals/ cust
 • Flask for application code\
 • Jinja2 templates + Bootstrap for HTML generation and styling\
 • SQLite for data storage\
-• SQLAlchemy for communicating between application code and database\
+• SQLAlchemy for communicating between application code and database
 ## File Architecture
 • backend – has models.py and controllers.py files\
 • instance – has the database file\
