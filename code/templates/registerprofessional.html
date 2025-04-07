@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Professional SignUp</title>
+    <link rel="stylesheet"
+      href="/static/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script defer
+      src="/static/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <style>
+    .dropdown-menu.dropdown-menu-wide {
+  min-width: 100%;
+}
+</style>
+  <body style="background-color:lightblue">
+    <div class="p-5 shadow p-3 mb-5 bg-body" id="input-form"
+      style="height: auto;">
+      <form action="/registerprofessional" method="POST">
+        <h2 style="text-align:center;">Service Professional Sign-Up</h2>
+        <br>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingInput" name="username"
+            placeholder="name@example.com">
+          <label for="floatingInput">Email address (username)</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" name="password"
+            placeholder="Password">
+          <label for="floatingPassword">Password</label>
+        </div>
+        <br>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingInput" name="fullname"
+            placeholder="Name">
+          <label for="floatingInput">Full Name</label>
+        </div>
+        <div class="dropdown">
+          <!-- <button class="btn btn-secondary dropdown-toggle" type="button"
+            id="dropdownMenuButton1" data-bs-toggle="dropdown"
+            aria-expanded="false"
+            style="width:100%; background:white; color: black; border-color: #dee2e6;">
+            Service Provided
+          </button>
+          <ul class="dropdown-menu dropdown-menu-right dropdown-menu-wide" name="serviceprovided"
+            aria-labelledby="dropdownMenuButton1">
+            <li><button class="dropdown-item disabled" type="button"
+                aria-disabled="true" onclick="showService(this)">Service
+                Provided</button></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><button class="dropdown-item" type="button"
+                onclick="showService(this)">Action</button></li>
+            <li><button class="dropdown-item" type="button"
+                onclick="showService(this)">Another action</button></li>
+            <li><button class="dropdown-item" type="button"
+                onclick="showService(this)">Something else here</button></li>
+          </ul> -->
+          <select class="form-select" aria-label="Default select example" name="serviceprovided">
+            <option selected disabled style="text-align: center;">Service Provided</option>
+            {%for key,value in services.items() %}
+            <option value="{{key}}">{{key}}</option>
+            {%endfor%}
+          </select>
+        </div>
+        <br>
+        <div class="form-floating mb-3">
+          <input type="number" class="form-control" id="floatingInput" name="experience"
+            placeholder="Experience">
+          <label for="floatingInput">Experience (in years)</label>
+        </div>
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Address" name="address"
+            id="floatingTextarea" style="height: 100px;"></textarea>
+          <label for="floatingTextarea">Address</label>
+        </div>
+        <br>
+        <div class="form-floating mb-3">
+          <input type="number" class="form-control" id="floatingInput" name="pincode"
+            placeholder="Pincode">
+          <label for="floatingInput">Pincode</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="number" class="form-control" id="floatingInput" name="phone"
+            placeholder="Phone">
+          <label for="floatingInput">Phone</label>
+        </div>
+
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary" type="submit">Register</button>
+        </div>
+        <br><div style="color: red;">{{msg}}</div>
+      </form>
+      <br>
+      <div style="text-align: right;">
+        Existing User? <a href="/login">Login</a>
+      </div>
+    </div>
+    <script>
+        function showService(item) {
+            document.getElementById("dropdownMenuButton1").innerHTML = item.innerHTML;
+        }
+      </script>
+  </body>
+</html>

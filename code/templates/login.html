@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet"
+            href="/static/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+    <body class="px-2" style="background-color:lightblue">
+        <div class="p-5 shadow p-3 mb-5 bg-body" id="input-form"
+            style="height: auto;">
+            <form action="/login" method="POST">
+                <h2 style="text-align:center;">Login</h2>
+                <br>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput"
+                        name="username"
+                        placeholder="name@example.com">
+                    <label for="floatingInput">Email address (username)</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" name="password"
+                        id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <br>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="submit">Login</button>
+                </div>
+                <br><div style="color: red;">{{msg}}</div>
+            </form>
+            <br>
+            <div style="text-align: right;">
+                New User? <a href="/register">Register</a>
+            </div>
+            <div style="text-align: right;">
+                <a href="/registerprofessional">Register as Professional</a>
+            </div>
+        </div>
+    </body>
+</html>

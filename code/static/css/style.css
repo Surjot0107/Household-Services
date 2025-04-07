@@ -1,0 +1,13 @@
+#input-form{
+    width: 600px;
+    height: 500px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 20px;
+    padding:10px;
+}
+
+#panel{
+    width: 80%;
+    margin:auto;
+}
